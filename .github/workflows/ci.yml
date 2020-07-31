@@ -35,3 +35,15 @@ jobs:
         BASE_BRANCH: master
         BRANCH: gh-pages
         FOLDER: dist/gh-page
+
+  test:
+    runs-on: ubuntu-latest
+    name: Run Robot Framework Tests
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Robot Framework
+        uses: joonvena/robotframework-docker-action@v0.1
+        env:
+          BROWSER: chrome
+          ROBOT_TESTS_DIR: ${{ github.workspace }}/tests
