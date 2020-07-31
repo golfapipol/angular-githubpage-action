@@ -40,7 +40,6 @@ jobs:
       env:
         BROWSER: chrome
         ROBOT_TESTS_DIR: ${{ github.workspace }}/tests
-        ROBOT_REPORTS_DIR: ${{ github.workspace }}/tests
     - name: Archive robot reports
       uses: actions/upload-artifact@v2
       with:
